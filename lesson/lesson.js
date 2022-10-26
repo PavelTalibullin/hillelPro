@@ -116,3 +116,25 @@
 // 	result2 = 2;
 // }
 // console.log(result2);
+
+// 								УРОК 4(ФУНКЦИИ)
+// let name = 10;
+
+// function showName() {
+// 	let name = 'User';
+// 	console.log(name);
+// }
+
+// function sum(a, b) {
+// 	return a + b;
+// }
+
+// const resultOfSum = sum(1, 3);
+// console.log(resultOfSum);
+
+// showName();
+
+
+// Одна функция - одно действие
+// Как наименовать функции - в документе
+// Не все функции что-то возвращают
