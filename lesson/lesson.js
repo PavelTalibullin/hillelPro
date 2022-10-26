@@ -138,3 +138,57 @@
 // Одна функция - одно действие
 // Как наименовать функции - в документе
 // Не все функции что-то возвращают
+
+
+
+// Функция Declaration 
+// if (true) {
+// function user1(name) {
+// 	console.log(name)
+// }
+// }
+// user1();
+
+// //  функция Expression
+// const user2 = function(args) {}
+// user2();
+
+
+// const age = 17;
+// let welcome;
+
+// if (age < 18) {
+// 	welcome = function() {
+// 		console.log("hello");
+// 		}
+// 	}else {
+// 		welcome = function() {
+// 		console.log("hi There!")
+// 	}
+// }
+
+// 	welcome();
+
+// 				СТРЕЛОЧНАЯ ФУНКЦИЯ
+// Тоже в 15 году появилось
+
+// const sum1 = (a, b) => {
+// 	console.log(arguments);
+// };
+
+// const sum2 = (a) => a * a
+
+
+
+// function showArg(name, age, city) {
+// 	console.log(arguments);
+// }
+// showArg("User", 20, "Dnipro")
+
+// Аргумент - массив который возвращает те аргументы, которые мы укзали при вызове функции
+
+// const sum2 = function(a, b) {
+// 	return a + b ;
+// }
+// sum2(2,3);
+
