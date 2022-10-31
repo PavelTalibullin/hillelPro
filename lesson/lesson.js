@@ -192,3 +192,70 @@
 // }
 // sum2(2,3);
 
+//						Урок пять, массив
+
+// методы для добавления элементов в массив
+// push() - Добавляет элемент в конец.
+//unshift() - добавляет в начало, смещая все элементы на 1 индекс, что хуже чем пуш
+
+//pop() - Удаляет последний элемент
+// shift() - удаляет первый элемент
+
+// const arrayOfUser2 = ["user1","user2","user3","user4","user5"];
+
+// const newArray = arrayOfUser2.slice(0, 4);
+// arrayOfUser2.push("user6");
+// console.log(newArray);
+// console.log(arrayOfUser2);
+
+//splice(Удаляет от(start), сколько элементов удалить, Вставляем элемент"hello", Вставляем второй элемент"JS" и т.д)
+// const arrayOfUser2 = ["user1","user2","user3","user4","user5"];
+
+// arrayOfUser2.splice(2, 2, "hello", );
+// // arrayOfUser2.push("user6");
+// // console.log(newArray);
+// console.log(arrayOfUser2);
+
+
+// const users = ["user1",0,"user3","user4","user5"];
+// user2.forEach(function(user){
+// 	console.log(user);
+// })
+
+// user2.forEach((user) => console.log(user));
+
+
+// includes - возвращает true или false
+// const isUser = users.includes(false); // true false
+// Includes - сторогое сравнение. если написать false, он будет искать только false, игнорируя:
+// ===
+// 0
+// ""
+// null
+// undefined
+
+// ПОИСК В МАССИВЕ
+// find - возвращает или найденный элемент или undefined.
+// findIndex - Тоже самое, только возвращает index.
+
+// const adminUser = {
+// 	name: "User"
+// }
+
+// const users = ["user1","user2","user3","user4","user5", adminUser];
+
+// let result = users.find(function(item){
+// return item.name === "User"
+// })
+
+// console.log(result); 
+
+const users = ["user1","user2","user30","user40","user50"];
+
+const result = users.filter(function(item, index, array) {
+	return item.length > 5
+})
+
+const result2 = users.filter(item => item.length > 5)
+
+console.log(result); 
