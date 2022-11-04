@@ -250,12 +250,12 @@
 
 // console.log(result); 
 
-const users = ["user1","user2","user30","user40","user50"];
+// const users = ["user1","user2","user30","user40","user50"];
 
-const result = users.filter(function(item, index, array) {
-	return item.length > 5
-})
+// const result = users.filter(function(item, index, array) {
+// 	return item.length > 5
+// })
 
-const result2 = users.filter(item => item.length > 5)
+// const result2 = users.filter(item => item.length > 5)
 
-console.log(result); 
+// console.log(result); 
