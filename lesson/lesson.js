@@ -1,4 +1,4 @@
-'use ctrict';
+'use strict';
 
 // let a = '142qwe';
 // console.log(Boolean(a));
@@ -259,3 +259,251 @@
 // const result2 = users.filter(item => item.length > 5)
 
 // console.log(result); 
+
+
+// const myArr = [1, 2, 3, 4, 5];
+// myArr.shift();
+// console.log(myArr);
+
+
+// function delay(ms) {
+// 	return new Promise(resolve => setTimeout(resolve, ms))
+//  }
+// delay(3000).then(() => alert('выполнилось через 3 секунды'));
+
+
+// Практика
+// let promise = new Promise( function(resolve, reject) {
+// 	setTimeout(() => resolve(1), 1000);
+// }).then(function(result){
+// 	alert(result);
+// 	return result * 2
+// }).then(function(result){
+// 	alert(result);
+// 	return result * 2
+// }).then(function(result){
+// 	alert(result);
+// 	return result
+// }) // Это работает потому что Promise.then тоже возвращает промис
+
+// let promise = new Promise(function(resolve, reject) {
+// 	setTimeout(() => resolve(1), 1000)
+// }).then(function(result){
+// 	console.log(result);
+
+// 	return new Promise((resolve, reject) => {
+// 		setTimeout(() => resolve(result * 2), 1000);
+// 	});
+
+// }).then(function(result){
+// 	console.log(result)
+
+// 	return new Promise ((resolve, reject) => {
+// 		setTimeout(() => resolve(result * 2), 1000);
+// 	});
+
+// }).then(function(result){
+// 	console.log(result);
+// });
+
+
+// loadScript("/article/promise-chaining/one.js")
+// .then(function(script){
+// 	return loadScript("/article/promise-chaining/two.js");
+// })
+// .then(function(script){
+// 	return loadScript("/article/promise-chaining/three.js")
+// })
+// .then(function(script){
+// 	one();
+// 	two();
+// 	three();
+// })
+
+// fetch('/article/promise-chaining/user.json')
+// .then (function(response){
+// 	return response.text();
+// })
+// .then(function(text) {
+// 	alert(text)
+// })
+
+// fetch('/article/promise-chaining/user.json')
+// .then(response => response.json())
+// .then(user => alert(user.name));
+
+
+// fetch('/article/promise-chaining/user.json')
+// .then(response => response.json())
+// .then(user => fetch(`https://api.github.com/users/${user.name}`))
+// .then(response => response.json())
+// .then(githubUser => {
+// 	let img = document.createElement('img');
+// 	img.src = githubUser.avatar_url;
+// 	img.className = "promise-avatar-example";
+// 	document.body.append(img);
+
+// 	setTimeout(() => img.remove(), 3000); // (*)
+//  });
+
+
+// УРОК 10
+// ИМПЕРАТИВНЫЙ КОД
+// function onlyAdd(array) {
+// 	const result = []
+
+// 	for (const element of array) {
+// 		if(element % 2 !== 0) {
+// 			result.push(element)
+// 		}
+// 	}
+
+// 	return result
+// }
+
+// ДЕКЛАРАТИВНЫЙ КОД
+// function onlyOdd(array){
+// 	return array.filter(el => el % 2 !== 0)
+// }
+
+// let promise = new Promise(function(resolve, reject) {
+// 	setTimeout(() => resolve("done!"), 1000);
+//  });
+ 
+//  // resolve запустит первую функцию, переданную в .then
+//  promise.then(
+// 	result => alert(result), // выведет "done!" через одну секунду
+// 	error => alert(error) // не будет запущена
+//  );
+
+
+// ЦЕПОЧКА ПРОМИСОВ
+// new Promise(function(resolve, reject) {
+// 	setTimeout(() => resolve(1), 1000);
+// }).then(function(result){
+// 	alert(result)
+// 	retutn(result * 2)
+// }).then(function(result){
+// 	alert(result);
+// 	return(result * 2)
+// }) И Т.Д
+
+
+
+
+// fetch
+// let promise = fetch(url);
+
+
+
+
+
+// let promise = Promise.all(iterable);
+
+// Promise.all([
+// 	new Promise((resolve, reject) => {
+// 		setTimeout(() => resolve(1), 1000)
+// 	}),
+// 	2,
+// 	3
+// ]).then(alert);
+
+
+
+
+
+// Promise.allSettled
+// let promise = Promise.allSettled(iterable);
+
+// Методу render нужны результаты всех fetch
+
+// const user = {
+// 	name: 'Pasha',
+// 	family: 2,
+
+// 	sayHi(){
+// 		console.log(`Hellow ${this.family}`)
+// 	}
+// }
+// console.log(user.sayHi())
+
+
+
+// THIS - Поточный объект, с которым мы работаем
+// function sayHi(){
+// 	console.log(this);
+// }
+
+// sayHi(); 
+
+// function sayHi1() {
+// 	console.log(this);
+// 	function sayHi2(){ console.log('sayHi', this)}
+// 	sayHi2();
+// };
+
+// const user = {name: 'Pasha'};
+// user.say = sayHi1;
+// user.say();
+// Тут this берет значение снаружи. Так как сейчас перменных нет, то знаечние будет глобальный объект контекст
+
+// sayHi1();
+// // sayHi2(); 
+
+// setTimeout принемает callback. Так же эта функция возвращает числовой инентификатор
+
+// console.log('A');
+
+// const timeId = setInterval(() => {
+// 	console.log('D');
+// }, 1000);
+// // clearTimeout(timeId);
+
+// setTimeout(() => { 
+// 	clearInterval(timeId);
+// }, 3000)
+// console.log('B');
+// console.log('C');
+// 
+// const promise1 = new Promise((res, rej) => {
+// 	setTimeout (() => {
+// 		res("Good 1")
+// 	}, 1000);
+// });
+
+// const promise2 = new Promise ((res, rej) => {
+// 	setTimeout(() => {
+// 		rej("bad 2");
+// 	}, 1000)
+// });
+// const promise3 = new Promise ((res, rej) => {
+// 	setTimeout(() => {
+// 		res("Good 3");
+// 	}, 1000)
+// });
+
+// const arrayOfRequest = [
+	// const nameUser = [{name: "Pasha"}]
+	// fetch('https://jsonplaceholder.typicode.com/todos')
+	// .then(data => data.json())
+	// .then(todo => console.log(todo))
+	// .catch(e => console.log(e))
+
+
+// 	fetch('https://jsonplaceholder.typicode.com/posts'),
+// 	fetch('https://jsonplaceholder.typicode.com/posts/1')
+// ]
+ 
+// Promise.allSettled([promise1, promise2, promise3])
+// .then(data => console.log(data));
+
+
+// async / await !!!!!!!!!!!!!!!!!1
+
+const getData = async () => {
+	const responce = await fetch(`https://jsonplaceholder.typicode.com/posts`)
+	console.log('get answer from server');
+	return responce.json()
+};
+
+const user = getData().then(user => console.log(user));
