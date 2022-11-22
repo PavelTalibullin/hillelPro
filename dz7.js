@@ -10,27 +10,28 @@
 
 
 // Тут с getData, так же работает
-function getData(url) {
-	const responce = fetch(url)
-	.then(data => data.json())
-	.then (post => post.filter(user => user.userId === 3))
-	.catch(error => console.log(error))
+// function getData(url) {
+// 	const responce = fetch(url)
+// 	.then(data => data.json())
+// 	.then (post => post.filter(user => user.userId === 3))
+// 	.catch(error => console.log(error))
 
-	return responce
-};
+// 	return responce
+// };
 
-const user = getData('https://jsonplaceholder.typicode.com/posts').then(user => console.log(user));
+// const user = getData('https://jsonplaceholder.typicode.com/posts').then(user => console.log(user));
 
 
 
 
 // 				Задача 19
-// const getData = async (url) => {
-// const responce = await fetch(url);
-// const jsonObj = await responce.json();
-// const userFilter = jsonObj.filter(user => user.userId === 2);
+const getData = async (url) => {
+const responce = await fetch(url);
+const jsonObj = await responce.json();
 
-// return userFilter
-// };
+return jsonObj
+};
 
-// const user = getData('https://jsonplaceholder.typicode.com/posts').then(user => console.log(user));
+getData('https://jsonplaceholder.typicode.com/posts')
+.then(post => console.log(post.filter(user => user.userId === 3)))
+.catch(error => console.log(error))
