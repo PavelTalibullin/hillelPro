@@ -1,67 +1,69 @@
 body {
+	background-color: #22223b;
+	display: flex;
+	align-items: center;
+	justify-content: center;
 	font-family: "Open Sans", sans-serif;
  }
  
  .container {
-	display: flex;
+	width: 800px;
+	height: 500px;
+	background-color: white;
+	position: relative;
+ }
+ 
+ .game{
+ /* display: none; */
+ }
+ 
+ .content{
 	padding: 50px;
  }
  
- .leftMenu {
-	flex: 1;
+ .question{
+	font-size: 40px;
  }
  
- .search{
-	padding: 10px;
-	width: 200px;
-	border: 1px solid gray;
+ .answer{
+	font-size: 24px;
+	margin-bottom: 20px;
+	color: #333;
  }
  
- h1{
-	font-size: 30px;
-	color: #555;
-	font-weight: 300;
- }
- 
- 
- .categories{
-	display: flex;
-	flex-direction: column;
-	gap: 10px;
- }
- 
- 
- .category {
+ .submit{
+	background-color: rebeccapurple;
+	color: white;
+	border: none;
+	width: 100%;
+	height: 50px;
 	cursor: pointer;
-	font-size: 20px;
-	font-weight: 300;
-	padding: 5px;
+	position: absolute;
+	bottom: 0;
  }
  
- .content {
-	flex: 4;
+ .result {
+	display: none;
+	padding: 50px;
+	text-align: center;
  }
  
- .products{
-	display: flex;
-	flex-wrap: wrap;
-	gap: 10px;
+ .result h1{
+	font-size: 50px;
  }
  
- .product{
-	width: 350px;
-	display: flex;
-	flex-direction: column;
-	gap: 30px;
-	align-items: center;
+ .correct{
+	color: green;
  }
  
- img{
-	width: 150px;
-	height: 250px;
-	object-fit: contain;
+ .wrong{
+	color: red;
  }
  
- .name{
-	font-weight: 300;
+ .play{
+	color: white;
+	background-color: rebeccapurple;
+	padding: 10px 20px;
+	cursor: pointer;
+	border: none;
  }
