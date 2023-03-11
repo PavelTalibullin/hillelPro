@@ -2,11 +2,20 @@ import { useContext } from "react";
 import { Context } from "../App";
 
 const Card = () => {
-  const user = useContext(Context);
+  const { user, setUser } = useContext(Context);
 
-  console.log(user)
+  console.log(user);
 
-  return <div>Card: {user.name}</div>;
+  const handleClick = () => {
+    setUser("Random");
+  };
+
+  return (
+    <div>
+      <div>Card: {user}</div>
+      <button onClick={handleClick}>Change name</button>
+    </div>
+  );
 };
 
 export default Card;
