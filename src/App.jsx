@@ -1,18 +1,16 @@
-import { useState, createContext } from "react";
-import Widget from "./components/Widget";
-import "./App.css";
-
-//   1 Create Context
-export const Context = createContext();
+import { Route, Routes } from "react-router-dom";
+import Header from "./components/Header";
+import { Cart, Home } from "./pages";
+// import { CartProvider } from "./context/CartContext";
 
 const App = () => {
-  const [user, setUser] = useState("User");
-
   return (
-    <div className="App">
-      <Context.Provider value={{ user, setUser }}>
-        <Widget />
-      </Context.Provider>
+    <div>
+      <Header />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        {/* <Route path="/cart" element={<Cart />} /> */}
+      </Routes>
     </div>
   );
 };
